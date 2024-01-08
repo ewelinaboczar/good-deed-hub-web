@@ -1,0 +1,130 @@
+$main-gray-100: #524F4F;
+$main-green-100: #6EB3B7;
+$main-orange-100: #EE9773;
+
+$secondary-green-100: #B8D76E;
+$secondary-blue-100: #758EFA;
+$secondary-purple-100: #AF30E0;
+$secondary-pink-100: #EC5589;
+$secondary-orange-100: #FFBE8E;
+
+$md-matgdhpallete: (
+        50 : #fdf3ee,
+        100 : #fae0d5,
+        200 : #f7cbb9,
+        300 : #f3b69d,
+        400 : #f1a788,
+        500 : $main-orange-100,
+        600 : #ec8f6b,
+        700 : #e98460,
+        800 : #e77a56,
+        900 : #e26943,
+        A100 : #ffffff,
+        A200 : #ffffff,
+        A400 : #ffd9cf,
+        A700 : #ffc5b5,
+        contrast: (
+                50 : #000000,
+                100 : #000000,
+                200 : #000000,
+                300 : #000000,
+                400 : #000000,
+                500 : #ffffff,
+                600 : #000000,
+                700 : #000000,
+                800 : #000000,
+                900 : #000000,
+                A100 : #000000,
+                A200 : #000000,
+                A400 : #000000,
+                A700 : #000000,
+        )
+);
+
+$md-matgdhpallete2: (
+        50 : #eef6f6,
+        100 : #d4e8e9,
+        200 : #b7d9db,
+        300 : #9acacd,
+        400 : #84bec2,
+        500 : $main-green-100,
+        600 : #66acb0,
+        700 : #5ba3a7,
+        800 : #519a9f,
+        900 : #3f8b90,
+        A100 : #e4fdff,
+        A200 : $main-green-100,
+        A400 : #7ef6ff,
+        A700 : #64f4ff,
+        contrast: (
+                50 : #000000,
+                100 : #000000,
+                200 : #000000,
+                300 : #000000,
+                400 : #000000,
+                500 : #000000,
+                600 : #000000,
+                700 : #000000,
+                800 : #000000,
+                900 : #000000,
+                A100 : #000000,
+                A200 : #000000,
+                A400 : #000000,
+                A700 : #000000,
+        )
+);
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$good-deed-hub-web-primary: mat.define-palette($md-matgdhpallete);
+$good-deed-hub-web-accent: mat.define-palette($md-matgdhpallete2, A200, A100, A400);
+$good-deed-hub-web-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$good-deed-hub-web-theme: mat.define-light-theme((
+  color: (
+    primary: $good-deed-hub-web-primary,
+    accent: $good-deed-hub-web-accent,
+    warn: $good-deed-hub-web-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($good-deed-hub-web-theme);
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: $main-gray-100;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: black;
+}
+
+.mat-raised-button, .mat-button {
+  border-radius: 36px!important;
+}
+
+.mat-raised-button:not([class*=mat-elevation-z]) {
+  box-shadow: none;
+}
+
+@import "./app/good-deed-hub.component.scss";
+@import "./app/login/login.component.scss";
+@import "./app/register/register.component.scss";
+
+
+

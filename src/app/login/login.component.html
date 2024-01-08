@@ -1,0 +1,57 @@
+<span>Already have an account? Log in</span>
+<form class="login-form">
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput
+           type="email"
+           required
+           [(ngModel)]="userCredentials.email"
+           name="email"
+           #emailModel = "ngModel">
+    <mat-error
+            *ngIf="emailModel.hasError('email') && !emailModel.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailModel.hasError('required')">
+      Email is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input matInput
+           required
+           name="password"
+           [(ngModel)]="userCredentials.password"
+           [type]="hidePassword ? 'password' : 'text'"
+           #passwordModel = "ngModel">
+    <button mat-icon-button
+            matSuffix
+            (click)="hidePassword = !hidePassword"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hidePassword">
+      <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+
+    <mat-error *ngIf="passwordModel.hasError('required')">
+      Password is required
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button
+          class="login-button"
+          type="submit"
+          color="primary">
+    Login
+  </button>
+</form>
+
+<div class="register-section">
+  <span>Don’t have an account?</span>
+  <button mat-button
+          type="button"
+          (click)="redirectToRegister()"
+          color="accent">
+    Create
+  </button>
+</div>
+

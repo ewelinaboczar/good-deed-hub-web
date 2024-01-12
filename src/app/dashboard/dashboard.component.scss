@@ -1,0 +1,22 @@
+gdh-dashboard {
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+
+  .widgets {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .widget {
+      border-radius: 10px;
+      box-shadow: 5px 0px 15px 5px rgba(0, 0, 0, 0.10);
+      background: #FFF;
+      width: 48%;
+      margin-bottom: 8px;
+      padding: 15px;
+    }
+  }
+}

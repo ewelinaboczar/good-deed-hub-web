@@ -1,0 +1,60 @@
+gdh-frame {
+  .header {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .content {
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    margin-top: 80px;
+  }
+
+  .logo {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .toolbar {
+    width: 90%;
+    border-radius: 100px 0px 0px 100px;
+    box-shadow: -5px 0px 15px 5px rgba(0, 0, 0, 0.10);
+
+    .toolbar-row {
+      gap: 1rem;
+      justify-content: flex-end;
+
+      .name {
+        color: #FFF;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+
+      .header-icon {
+        height: 40px;
+        width: 40px;
+        color: black;
+        background-color: white;
+        border-radius: 100%;
+      }
+
+      .photo-img {
+        display: flex;
+
+        .round-image {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

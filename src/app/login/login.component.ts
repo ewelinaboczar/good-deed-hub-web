@@ -17,6 +17,10 @@ export class LoginComponent {
     redirectToRegister() {
         this.router.navigate(['/register']).then(noop);
     }
+
+    login() {
+        this.router.navigate(['../../dashboard']).then(noop);
+    }
 }
 
 export interface UserCredentials {

@@ -1,0 +1,26 @@
+<div class="widget-header">
+    <div class="widget-tittle">
+        <div class="dot"></div>
+        <span>Events for *CITY*</span>
+    </div>
+    <span class="widget-subtitle">
+        Most popular in March
+    </span>
+</div>
+<div class="list">
+    <mat-list>
+        <mat-list-item *ngFor="let event of events" class="list-item">
+            <span class="list-header"> {{event.tittle}}</span>
+            <div class="likes">
+                <mat-icon color="warn">
+                    <span>favorite</span>
+                </mat-icon>
+                {{event.likes}}
+            </div>
+            <div class="desc">
+                <span class="description"> {{event.description}}</span>
+                <button mat-stroked-button type="button">Join</button>
+            </div>
+        </mat-list-item>
+    </mat-list>
+</div>

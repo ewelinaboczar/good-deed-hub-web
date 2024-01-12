@@ -1,0 +1,31 @@
+<section class="header">
+    <div class="logo">
+        <img src="assets/logo.svg" alt="logo">
+    </div>
+    <mat-toolbar color="accent" class="toolbar">
+        <mat-toolbar-row class="toolbar-row">
+            <div class="name">
+                <span>Hi, Jackson</span>
+            </div>
+            <div matBadge="15"
+                 matBadgeColor="warn"
+                 matBadgeSize="small"
+                 class="photo-img">
+                <img src="assets/photo.svg" alt="photo" class="round-image">
+            </div>
+            <button mat-icon-button class="header-icon">
+                <mat-icon>
+                    <span>settings</span>
+                </mat-icon>
+            </button>
+            <button mat-icon-button class="header-icon">
+                <mat-icon>
+                    <span>logout</span>
+                </mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>
+<section class="content">
+    <router-outlet></router-outlet>
+</section>

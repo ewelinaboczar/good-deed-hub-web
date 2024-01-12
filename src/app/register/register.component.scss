@@ -2,34 +2,81 @@ gdh-register {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 32px;
 
-  input.example-right-align::-webkit-outer-spin-button,
-  input.example-right-align::-webkit-inner-spin-button {
-    display: none;
-  }
-
-  input.example-right-align {
-    -moz-appearance: textfield;
-  }
-
-  .registration-form {
-    width: 70%;
+  .left-section {
+    width: 50%;
     display: flex;
-    flex-direction: column;
+    background: $main-green-100;
+    border-radius: 0 100% 100% 0;
+    box-shadow: 5px 0 15px 5px rgba(0, 0, 0, 0.10);
 
-    .register-button {
-      margin-top: 32px;
-      align-self: flex-end;
+    .image {
+      width: 100%;
+      height: 100%;
+
+      img {
+        height: 100%;
+        max-width: 100%;
+      }
     }
   }
 
-  .login-section {
-    width: 70%;
+  .right-section {
+    width: 50%;
+    height: 100%;
     display: flex;
-    justify-content: flex-end;
-    align-items: baseline;
-    font-weight: 500;
+    flex-direction: column;
+    padding: 2rem 2rem 2rem 4rem;
+    overflow: auto;
+
+    .form-section {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      input.example-right-align::-webkit-outer-spin-button,
+      input.example-right-align::-webkit-inner-spin-button {
+        display: none;
+      }
+
+      input.example-right-align {
+        -moz-appearance: textfield;
+      }
+
+      .registration-form {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+
+        .register-button {
+          margin-top: 32px;
+          align-self: flex-end;
+        }
+      }
+
+      .login-section {
+        width: 70%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: baseline;
+        font-weight: 500;
+      }
+    }
+
+    .logo {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .slogan {
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      margin-top: 50px;
+      margin-bottom: 64px;
+    }
   }
 }

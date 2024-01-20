@@ -1,4 +1,4 @@
-gdh-events-list {
+gdh-volunteers-list {
   .widget-header {
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@ gdh-events-list {
         width: 23px;
         height: 23px;
         border-radius: 50%;
-        background-color: $secondary-orange-100;
+        background-color: $secondary-green-100;
       }
 
       span {
@@ -45,35 +45,57 @@ gdh-events-list {
       width: 100%;
       height: 80px;
 
-      .list-header {
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+      .photo-name {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding-bottom: 5px;
+
+        .photo {
+          display: flex;
+          height: 26px;
+
+          img {
+            border-radius: 50%;
+          }
+        }
+
+        .list-header {
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
       }
 
-      .likes {
+      .points {
+        position: absolute;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
         font-size: 12px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        right: 18px;
+        top: -25px;
 
         mat-icon {
           display: flex;
           justify-content: center;
           align-items: center;
-          font-size: 12px;
+          font-size: 40px;
+          padding-bottom: 15px;
         }
       }
 
       .desc {
+        position: relative;
         display: flex;
         gap: 1rem;
 
         .description {
+          width: 80%;
           font-size: 8px;
           font-style: normal;
           font-weight: 400;

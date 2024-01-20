@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { GoodDeedHubComponent } from "./good-deed-hub.component";
 import { RouterOutlet } from "@angular/router";
@@ -20,6 +19,9 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {EventsListComponent} from "./dashboard/events/events-list.component";
 import {StatisticsWidgetComponent} from "./dashboard/statistics/statistics-widget.component";
 import {MatListModule} from "@angular/material/list";
+import {VolunteersListComponent} from "./dashboard/volunteers/volunteers-list.component";
+import {SettingsWrapperComponent} from "./settings/settings-wrapper.component";
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import {MatListModule} from "@angular/material/list";
       FrameComponent,
       DashboardComponent,
       EventsListComponent,
-      StatisticsWidgetComponent
+      StatisticsWidgetComponent,
+      VolunteersListComponent,
+      SettingsWrapperComponent
   ],
     imports: [
         AppRoutingModule,
@@ -50,6 +54,7 @@ import {MatListModule} from "@angular/material/list";
         MatToolbarModule,
         MatBadgeModule,
         MatListModule,
+        MatDialogModule
     ],
   bootstrap: [AppComponent]
 })

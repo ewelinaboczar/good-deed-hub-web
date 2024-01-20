@@ -1,0 +1,168 @@
+<div class="close-button">
+    <button mat-button (click)="close()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+<div class="forms">
+    <div class="card left">
+        <span class="modal-header">Settings</span>
+        <div class="widget-header">
+            <div class="dot"></div>
+            <span>Update personal data</span>
+        </div>
+        <div class="form-change-cred">
+            <form class="registration-form">
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput
+                           required
+                           name="name"
+                           #nameModel = "ngModel"
+                           [(ngModel)]="userData.name">
+                    <mat-error *ngIf="nameModel.hasError('required')">
+                        Field is required
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Surname</mat-label>
+                    <input matInput
+                           required
+                           name="surname"
+                           #surnameModel = "ngModel"
+                           [(ngModel)]="userData.surname">
+                    <mat-error *ngIf="surnameModel.hasError('required')">
+                        Field is required
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>City</mat-label>
+                    <input matInput
+                           required
+                           name="city"
+                           #cityModel = "ngModel"
+                           [(ngModel)]="userData.city">
+                    <mat-error *ngIf="cityModel.hasError('required')">
+                        Field is required
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Country</mat-label>
+                    <input matInput
+                           required
+                           name="cuntry"
+                           #countryModel = "ngModel"
+                           [(ngModel)]="userData.country">
+                    <mat-error *ngIf="countryModel.hasError('required')">
+                        Field is required
+                    </mat-error>
+                </mat-form-field>
+
+                <button mat-raised-button
+                        class="register-button update-btn"
+                        type="submit"
+                        color="primary">
+                    Update
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="right">
+        <div class="card">
+            <div class="widget-header">
+                <div class="dot"></div>
+                <span>Change password</span>
+            </div>
+            <form>
+                <mat-form-field appearance="outline">
+                    <mat-label>Old password</mat-label>
+                    <input matInput
+                           required
+                           name="password"
+                           [(ngModel)]="userData.password"
+                           [type]="hidePassword ? 'password' : 'text'"
+                           (ngModelChange)="onChange($event, passwordModel)"
+                           #passwordModel = "ngModel"
+                           minlength="8"
+                           pattern="^(?=.*\d)(?=.*[A-Z]).{8,}$">
+                    <button mat-icon-button
+                            matSuffix
+                            (click)="hidePassword = !hidePassword"
+                            [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hidePassword">
+                        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="passwordModel.hasError('required')">
+                        Password is required
+                    </mat-error>
+                    <mat-error *ngIf="passwordModel.hasError('pattern') && !passwordModel.hasError('required')">
+                        Password must be at least: 8 characters long, one digit, and one capital letter.
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput
+                           required
+                           name="password"
+                           [(ngModel)]="userData.password"
+                           [type]="hidePassword ? 'password' : 'text'"
+                           (ngModelChange)="onChange($event, passwordModel)"
+                           #passwordModel = "ngModel"
+                           minlength="8"
+                           pattern="^(?=.*\d)(?=.*[A-Z]).{8,}$">
+                    <button mat-icon-button
+                            matSuffix
+                            (click)="hidePassword = !hidePassword"
+                            [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hidePassword">
+                        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="passwordModel.hasError('required')">
+                        Password is required
+                    </mat-error>
+                    <mat-error *ngIf="passwordModel.hasError('pattern') && !passwordModel.hasError('required')">
+                        Password must be at least: 8 characters long, one digit, and one capital letter.
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Repeat password</mat-label>
+                    <input matInput
+                           required
+                           type="password"
+                           name="repeatPassword"
+                           [pattern]="userData.password"
+                           [(ngModel)]="userData.repeatPassword"
+                           #passwordRepeatedModel = "ngModel">
+                    <mat-error *ngIf="passwordRepeatedModel.hasError('pattern')">
+                        Passwords do not match
+                    </mat-error>
+                </mat-form-field>
+
+                <button mat-raised-button
+                        class="register-button update-btn"
+                        type="submit"
+                        color="primary">
+                    Update
+                </button>
+            </form>
+        </div>
+        <div class="card delete-acc">
+            <div class="widget-header">
+                <div class="dot"></div>
+                <span>Delete account</span>
+            </div>
+            <span>Once your account is deleted, you will not be able to recover any data.</span>
+            <button mat-raised-button
+                    class="register-button update-btn"
+                    type="submit"
+                    color="primary">
+                Delete
+            </button>
+        </div>
+    </div>
+</div>
+

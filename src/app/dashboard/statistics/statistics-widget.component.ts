@@ -5,5 +5,5 @@ import {Component} from "@angular/core";
     templateUrl: './statistics-widget.component.html',
 })
 export class StatisticsWidgetComponent {
-
+    earnedPoints: number = 2075;
 }

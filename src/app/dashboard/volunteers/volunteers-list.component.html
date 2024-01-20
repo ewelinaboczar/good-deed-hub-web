@@ -1,0 +1,30 @@
+<div class="widget-header">
+    <div class="widget-tittle">
+        <div class="dot"></div>
+        <span>Volunteers</span>
+    </div>
+    <span class="widget-subtitle">
+        Most recognized
+    </span>
+</div>
+<div class="list">
+    <mat-list>
+        <mat-list-item *ngFor="let volunteer of volunteers" class="list-item">
+            <div class="photo-name">
+                <div class="photo">
+                    <img src="assets/photo.svg" alt="user">
+                </div>
+                <span class="list-header"> {{volunteer.name}} {{volunteer.surname}}</span>
+            </div>
+            <div class="desc">
+                <span class="description"> {{volunteer.description}}</span>
+                <div class="points">
+                    <mat-icon>
+                        <span>emoji_events</span>
+                    </mat-icon>
+                    {{volunteer.points}}
+                </div>
+            </div>
+        </mat-list-item>
+    </mat-list>
+</div>

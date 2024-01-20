@@ -12,11 +12,23 @@ gdh-dashboard {
 
     .widget {
       border-radius: 10px;
-      box-shadow: 5px 0px 15px 5px rgba(0, 0, 0, 0.10);
+      box-shadow: 5px 0 15px 5px rgba(0, 0, 0, 0.10);
       background: #FFF;
       width: 48%;
-      margin-bottom: 8px;
+      margin-bottom: 30px;
+      height: 350px;
       padding: 15px;
+      overflow: auto;
+    }
+
+    .ad {
+      padding: 0;
+      object-fit: fill;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
     }
   }
 }

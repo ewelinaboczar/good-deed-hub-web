@@ -99,7 +99,6 @@ $good-deed-hub-web-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($good-deed-hub-web-theme);
 
-html, body { height: 100%; }
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -134,12 +133,17 @@ body {
   url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
 }
 
+.cdk-overlay-pane {
+  max-width: 100vw!important;
+}
+
 @import "./app/login/login.component.scss";
 @import "./app/register/register.component.scss";
 @import "./app/frame/frame.component.scss";
 @import "./app/dashboard/dashboard.component.scss";
 @import "./app/dashboard/statistics/statistics-widget.component.scss";
 @import "./app/dashboard/events/events-list.component.scss";
-
+@import "./app/dashboard/volunteers/volunteers-list.component.scss";
+@import "./app/settings/settings-wrapper.component.scss";
 
 

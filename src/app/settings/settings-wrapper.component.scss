@@ -1,0 +1,92 @@
+gdh-settings-wrapper {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  gap: 50px;
+  padding: 25px 25px 100px 25px;
+  width: 100vw;
+  height: 100vh;
+  overflow: clip;
+
+  .close-button {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .forms {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+
+    .left {
+      position: relative;
+      height: 100%;
+
+      .modal-header {
+        position: absolute;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        top: -85px;
+        left: 21px;
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      .delete-acc {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .widget-header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding-bottom: 36px;
+
+    .dot {
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      background-color: $main-green-100;
+    }
+
+    span {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+  }
+
+  .card {
+    width: 600px;
+    border-radius: 10px;
+    padding: 20px;
+    background: #FFF;
+    box-shadow: 5px 0 15px 5px rgba(0, 0, 0, 0.10);
+  }
+
+  .update-btn {
+    align-self: flex-end;
+    margin-top: 40px;
+    width: 150px;
+  }
+}
+
+.mat-dialog-container {
+  padding: 0!important;
+}
